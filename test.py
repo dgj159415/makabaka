@@ -1,5 +1,4 @@
 import math
-
 list=[4,1,34,555,276,54,6,89,9,98,453]
 a='dugaojian'
 b={45:32,3:98,24:89}
@@ -122,5 +121,5 @@ def s10_love(a,b):
                 else:
                     continue
 
-
-print(s4_love(b))
+def s11_love():
+    pass
