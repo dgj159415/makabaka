@@ -1,5 +1,5 @@
 import math
-list=[25,1,150,50,2000,54,70]
+list=[25,5,32,50,13,35,2]
 a='dugaojian'
 b={45:32,3:98,24:89}
 #输出a+b
@@ -135,36 +135,44 @@ def s11_love(list):
             while b%10==0:
                 sum1=sum1+1
                 b=b/10
-                c=b
-                #判断是10 的倍数的数，在取余之后，是否还是5的倍数
-                if c%10!=0:
-                    if c%5==0:
-                        sum2=sum2+1
         else:
             pass
         #判断5的个数
-        if i%5==0 and (i/5)%2!=0:
-            sum2=sum2+1
-
+        if i%5==0:
+            c = i
+            if c%10==0:
+                while c % 10 == 0:
+                    c = c/ 10
+                    if c%10!=0:
+                        if c%5==0:
+                            sum2=sum2+1
+            else:
+                sum2=sum2+1
         #判断2的个数
         if i%2==0:
-            if i%5==0:
+            if i%10==0:
                 d=i
                 while d % 10 == 0:
                     d = d / 10
                     if d % 10 != 0:
-                        if d % 5 == 0:
-                            pass
-                        else:
-                            sum3 = sum3 + 1
+                        if d % 2 == 0:
+                            while d%2==0:
+                                d=d/2
+                                sum3 = sum3 + 1
+
+
             else:
-                sum3=sum3+1
+                e=i
+                while e % 2 == 0:
+                    e = e / 2
+                    sum3 = sum3 + 1
     if sum2<sum3:
-        print(sum1+sum2)
+        if sum2==0:
+            print(sum1+sum2)
+        else:
+            print(sum1+sum2+1)
     else:
         print(sum1+sum3)
     print(sum1,sum2,sum3)
     print(sum4)
-
-
 s11_love(list)

@@ -55,7 +55,7 @@ def convert(path, file_name):
     mk_time = datetime.fromtimestamp(os.path.getmtime(file_path)).strftime('%Y-%m-%d %H.%M.%S')
     coder, kind = parse(file_path)
 
-    dir_name = 'E:\\'+path.split('\\')[-1]
+    dir_name = 'E:\\img\\'+path.split('\\')[-1]
     #print(dir_name)
     if not os.path.exists(dir_name):
         os.mkdir(dir_name)
@@ -83,4 +83,4 @@ def do(path):
 
 
 if __name__ == "__main__":
-    do(r"E:\aa\bb")
+    do(r"E:\aaa\FileStorage\Image\06")
