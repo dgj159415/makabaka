@@ -175,4 +175,5 @@ def s11_love(list):
         print(sum1+sum3)
     print(sum1,sum2,sum3)
     print(sum4)
-s11_love(list)
+def img_name(num):
+    print(num)
