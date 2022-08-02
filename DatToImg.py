@@ -80,7 +80,5 @@ def do(path):
             i += 1
         except:
             pass
-
-
 if __name__ == "__main__":
-    do(r"E:\aaa\FileStorage\Image\06")
+    do(r"E:\12")
