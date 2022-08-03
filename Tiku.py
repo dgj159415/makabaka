@@ -120,59 +120,36 @@ def s10_love(a,b):
                     break
                 else:
                     continue
-
+#不相乘情况下，计算正整数列表各项相乘后的乘积的0的数量
 def s11_love(list):
-    print(list)
-    sum1=0
     sum2=0
     sum3=0
-    sum4=1
-    for i in list:
-        sum4=sum4*i
-        #判断0的个数
-        if i%10==0:
-            b=i
-            while b%10==0:
-                sum1=sum1+1
-                b=b/10
+    num1=0
+    for i in range(0,len(list)):
+        if list[i]%10==0:
+            a=list[i]
+            while a%10==0:
+                a=a/10
+                num1=num1+1
+            list[i]=int(a)
         else:
-            pass
-        #判断5的个数
-        if i%5==0:
-            c = i
-            if c%10==0:
-                while c % 10 == 0:
-                    c = c/ 10
-                    if c%10!=0:
-                        if c%5==0:
-                            sum2=sum2+1
-            else:
+            continue
+    for j in list:
+        # 判断5的个数
+        if j%5==0:
+            c=j
+            while c%5==0:
+                c=c/5
                 sum2=sum2+1
-        #判断2的个数
-        if i%2==0:
-            if i%10==0:
-                d=i
-                while d % 10 == 0:
-                    d = d / 10
-                    if d % 10 != 0:
-                        if d % 2 == 0:
-                            while d%2==0:
-                                d=d/2
-                                sum3 = sum3 + 1
-
-
-            else:
-                e=i
-                while e % 2 == 0:
-                    e = e / 2
-                    sum3 = sum3 + 1
+        # 判断2的个数
+        if j%2==0:
+            d=j
+            while d%2==0:
+                d=d/2
+                sum3=sum3+1
+    #2和5相乘，得到10的数量取决与少数
     if sum2<sum3:
-        if sum2==0:
-            print(sum1+sum2)
-        else:
-            print(sum1+sum2+1)
+        print(num1+sum2)
     else:
-        print(sum1+sum3)
-    print(sum1,sum2,sum3)
-    print(sum4)
-s11_love(list)
+        print(num1+sum3)
+
