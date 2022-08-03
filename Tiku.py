@@ -1,5 +1,5 @@
 import math
-list=[5,72]
+list=[25,5,32,50,13,35,2]
 a='dugaojian'
 b={45:32,3:98,24:89}
 #输出a+b
@@ -120,51 +120,59 @@ def s10_love(a,b):
                     break
                 else:
                     continue
-#不相乘情况下，判断正整数列表相乘后有几个0
+
 def s11_love(list):
+    print(list)
+    sum1=0
     sum2=0
     sum3=0
-    num1=0
-    for i in range(0,len(list)):
-        if list[i]%10==0:
-            a=list[i]
-            while a%10==0:
-                a=a/10
-                num1=num1+1
-            list[i]=int(a)
-        else:
-            continue
-    for j in list:
-        # 判断5的个数
-        if j%5==0:
-            c=j
-            while c%5==0:
-                c=c/5
-                sum2=sum2+1
-        # 判断2的个数
-        if j%2==0:
-            d=j
-            while d%2==0:
-                d=d/2
-                sum3=sum3+1
-    #2和5相乘，得到10的数量取决与少数
-    if sum2<sum3:
-        print(num1+sum2)
-    else:
-        print(num1+sum3)
-#判断列表相乘后结尾非零数字的奇偶性
-def s12_love(list):
-    a=1
+    sum4=1
     for i in list:
-        a=a*i
-    if a%10==0:
-        c=a
-        while c%10==0:
-            c=c/10
+        sum4=sum4*i
+        #判断0的个数
+        if i%10==0:
+            b=i
+            while b%10==0:
+                sum1=sum1+1
+                b=b/10
+        else:
+            pass
+        #判断5的个数
+        if i%5==0:
+            c = i
+            if c%10==0:
+                while c % 10 == 0:
+                    c = c/ 10
+                    if c%10!=0:
+                        if c%5==0:
+                            sum2=sum2+1
+            else:
+                sum2=sum2+1
+        #判断2的个数
+        if i%2==0:
+            if i%10==0:
+                d=i
+                while d % 10 == 0:
+                    d = d / 10
+                    if d % 10 != 0:
+                        if d % 2 == 0:
+                            while d%2==0:
+                                d=d/2
+                                sum3 = sum3 + 1
+
+
+            else:
+                e=i
+                while e % 2 == 0:
+                    e = e / 2
+                    sum3 = sum3 + 1
+    if sum2<sum3:
+        if sum2==0:
+            print(sum1+sum2)
+        else:
+            print(sum1+sum2+1)
     else:
-        c=a
-    if(int(str(int(c))[-1]))%2==0:
-        print(0)
-    else:
-        print(1)
-s12_love(list)
+        print(sum1+sum3)
+    print(sum1,sum2,sum3)
+    print(sum4)
+s11_love(list)
